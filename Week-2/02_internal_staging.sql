@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS COURSE;
+CREATE SCHEMA IF NOT EXISTS COURSE.WEEK2 ;
+
+CREATE OR REPLACE TABLE COURSE.WEEK2.EMPLOYEES (
+    first_name STRING,
+    last_name STRING,
+    email STRING,
+    streetaddress STRING,
+    city STRING,
+    start_date date
+);
