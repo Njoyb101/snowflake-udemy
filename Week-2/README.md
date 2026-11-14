@@ -2,7 +2,7 @@
 
 1. Internal Stagging
     - User Stage (@~)
-    - Table Stage (@%) 
+    - Table Stage (@%) `COURSE.WEEK2.EMPLOYEES` --> `@COURSE.WEEK2.%EMPLOYEES` 
         - When user creates a table, Table staging area is automatically created
         - Can not be dropped
         - Can not copy data from T1 staging area to T2 table T1 Stage --> T1 Table
