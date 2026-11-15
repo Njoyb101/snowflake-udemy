@@ -42,6 +42,7 @@ skip_header = 0
 null_if = ('NULL', 'null') 
 empty_field_as_null = true 
 FIELD_OPTIONALLY_ENCLOSED_BY ='"'
+error_on_column_count_mismatch=false
 compression = gzip;
 
 ----------------------------------------------
@@ -68,6 +69,11 @@ REMOVE @%EMPLOYEES PATTERN='*.csv.gz'; -- Cleanup with pattern
 
 -- 2. View in Stagging
 SELECT * FROM @COURSE.WEEK2.%EMPLOYEES; -- Does not have the file format schema advantage . so can not query
+
+-- To see the data use this in stagging
+select metadata$filename, metadata$file_row_number,$1 , $2 , $3 , $4 , $5 , $6 
+      from @COURSE.WEEK2.%EMPLOYEES 
+      (file_format => COURSE.FILE_FORMATS.EMP_CSV_FORMAT)
 
 -- 3. Stagging to Table 
 COPY INTO COURSE.WEEK2.EMPLOYEES
