@@ -1,3 +1,11 @@
+/*
+Challenge Summary
+Track the source file for every loaded row by modifying your population table and updating your COPY INTO command in Snowflake:
+• Add a Metadata Column: Alter the population table to add a new column named file_name (or filename).
+• Capture Source Filenames: Modify your COPY INTO statement using a subquery and Snowflake's METADATA$FILENAME column to load 
+all the files from population/countries_A while populating the new file_name column with each row's source file name.
+*/
+
 CREATE TABLE demo_db.public.population (
     file_name VARCHAR,
     country VARCHAR,

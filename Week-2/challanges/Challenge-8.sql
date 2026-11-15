@@ -1,3 +1,14 @@
+/*
+Challenge Summary
+Upload all country files to a named internal stage, then selectively load only a subset of them into an existing table in Snowflake:
+• Recreate the Internal Stage: Create (or replace) the named internal stage called population.
+• Upload All Country Files: Run a PUT command to upload all country files (not just those starting with "A") into a countries subfolder inside the population stage.
+• Truncate the Target Table: Clear out the existing records in your target table using TRUNCATE TABLE.
+• Selectively Load "A" Files: Write a COPY INTO command using pattern matching (such as PATTERN = '.*countries/A.*') to load only the files starting with the 
+letter "A" from the stage into your table.
+
+*/
+
 PUT file: / / / workspace / snowflake / Module -2 / Snowflake - stages / DATA / Practice_data / countries / A * @ % population_afgn / countries /;
 
 CREATE

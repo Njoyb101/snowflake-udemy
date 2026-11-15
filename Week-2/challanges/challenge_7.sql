@@ -1,3 +1,14 @@
+/*
+Challenge Summary
+Load data into a new Snowflake table without creating a named internal stage (simulating a scenario where you lack stage creation permissions):
+• Create a New Table: Create a new table named population_afghan with the appropriate column structure.
+• Use a Table Stage Instead: Because you cannot create a named internal stage, use Snowflake's built-in Table Stage (@%population_afghan) with a 
+PUT command to upload the country files starting with "A" (specifically into a countries subfolder within that table stage).
+• Load the Data: Run a COPY INTO command to load the Afghanistan file from the table stage (@%population_afghan) into the population_afghan table.
+
+*/
+
+
 PUT file: / / / workspace / snowflake / Module -2 / Snowflake - stages / DATA / Practice_data / countries / A * @ % population_afgn / countries_a /;
 
 CREATE
